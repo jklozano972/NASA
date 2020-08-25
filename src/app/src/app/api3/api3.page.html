@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+     <ion-title > ULTIMA SEMANA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card>
+
+    <ion-item color="danger">
+      <ion-icon color="light" slot="start" name="planet-outline"></ion-icon>
+      <ion-label> ultimos 8 dias </ion-label>
+
+      <ion-datetime
+                 
+      display-format="YYYY-MMMM-DD"
+      cancelText= "Cancelar"
+      doneText="Aceptar"
+      [ngModel]="FECHA.toISOString()"
+      [min]="minDate" [max]="maxDate"
+      [pickerOptions]="customPickerOptions"> 
+
+
+</ion-datetime>
+
+    </ion-item>
+    
+    <ion-card-content> {{explanation}} </ion-card-content>
+    <img src="{{url}}" *ngIf="mimeType=='image'">
+    <iframe [src]="url | safe" style="width: 70%; height: 50%; align-content: center;" *ngIf="mimeType=='video'" ></iframe>
+
+    
+  </ion-card> 
+  
+
+
+</ion-content>
+

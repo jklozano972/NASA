@@ -1,0 +1,42 @@
+.page-centered-element {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+
+  .buttons-container {
+    margin-top: 30px; 
+    font-family: 'Nunito' , sans-serif;
+  }
+} 
+
+.disabled{
+  opacity: 0.8;
+}
+
+ .iconSize{
+   font-size: 60px;
+ }
+
+h3, h1{ 
+   color: red; 
+  }
+
+a {
+  color:red;
+  text-decoration:none
+}
+
+h2 {
+
+  letter-spacing: 7pt;
+
+}

@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <ion-toolbar color="medium">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+         <ion-title>IMAGEN DEL DIA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="background"> 
+ 
+
+  <ion-card>
+      
+    <ion-item color="danger">
+      <ion-icon color="light" slot="start" name="planet-outline"></ion-icon>
+      <ion-label> DIA {{date}} </ion-label>
+    </ion-item>
+    <img src="{{url}}" *ngIf="mimeType=='image'">
+    <iframe [src]="url | safe" style="width: 70%; height: 50%;" *ngIf="mimeType=='video'"></iframe>
+    <ion-card-content> {{explanation}}  </ion-card-content>
+
+  </ion-card>
+    
+</ion-content>
