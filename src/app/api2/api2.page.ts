@@ -11,6 +11,8 @@ export class API2Page implements OnInit {
   dates: string;
   explanation: string;
   url:string;
+  title:string;
+
   
   //objetos
 
@@ -27,7 +29,7 @@ x
 
     this.customPickerOptions = {
       buttons: [{
-        text: 'Save',
+        text: 'ACEPTAR',
         handler: (evento) => {
 
           //variables
@@ -39,6 +41,7 @@ x
 //instancia de la clase, se obtiene un metodo de la clase fechas
           this.apiService.obtenerFechas(fechaC).subscribe(
             (res: any) => {
+              this.title = res.title;
               this.dates = res.dates;
               this.explanation = res.explanation;
               this.url = res.url;
@@ -49,7 +52,7 @@ x
          );        
         }
       }, {
-        text: 'Log',
+        text: 'CANCELAR',
         handler: () => {
           console.log('Clicked Log. Do not Dismiss.');
         }

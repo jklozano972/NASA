@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="medium">
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="background">
 
 
   <ion-card>
@@ -29,10 +29,15 @@
 </ion-datetime>
 
     </ion-item>
-   
-    <ion-card-content> {{explanation}} </ion-card-content>
-    <img src="{{url}}" *ngIf="mimeType=='image'">
-    <iframe [src]="url | safe" style="width: 70%; height: 50%;" *ngIf="mimeType=='video'"></iframe>
+         
+  <br>
+  <ion-card-title color="danger" align="center"> {{title}} </ion-card-title>
+    <ion-card-content> <p> {{explanation}} </p> </ion-card-content>
+
+    <div class="video"> 
+      <img class="center" src="{{url}}" *ngIf="mimeType=='image'">
+      <iframe [src]="url | safe"  *ngIf="mimeType=='video'" frameborder="0" allowfullscreen></iframe>
+    </div>
 
   </ion-card>
   

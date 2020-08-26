@@ -1,5 +1,5 @@
 <ion-header no-border>
-  <ion-toolbar color="medium">
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
@@ -11,15 +11,25 @@
 <ion-content class="background"> 
  
 
-  <ion-card>
+  <ion-card class="background-card">
       
     <ion-item color="danger">
       <ion-icon color="light" slot="start" name="planet-outline"></ion-icon>
       <ion-label> DIA {{date}} </ion-label>
     </ion-item>
-    <img src="{{url}}" *ngIf="mimeType=='image'">
-    <iframe [src]="url | safe" style="width: 70%; height: 50%;" *ngIf="mimeType=='video'"></iframe>
-    <ion-card-content> {{explanation}}  </ion-card-content>
+    
+  <br>
+    <ion-card-title color="danger" align="center"> {{title}} </ion-card-title>
+    <ion-card-content> <p> {{explanation}} </p> </ion-card-content>
+
+    <div class="row">
+      <div class="col">
+      <div class="video">
+        <img class="center" src="{{url}}" *ngIf="mimeType=='image'">
+      <iframe [src]="url | safe"  *ngIf="mimeType=='video'" frameborder="0" allowfullscreen></iframe>
+  </div>
+  </div>
+  </div>    
 
   </ion-card>
     

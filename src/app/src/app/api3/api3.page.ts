@@ -17,6 +17,7 @@ public minDate = moment().subtract(7,'d').format();
   dates: string;
   explanation: string;
   url:string;
+  title:string;
 
   mimeType: string;  
 
@@ -30,7 +31,7 @@ public minDate = moment().subtract(7,'d').format();
 
     this.customPickerOptions = {
       buttons: [{
-        text: 'Save',
+        text: 'ACEPTAR',
         handler: (evento) => {
 
         let year = evento.year.value;
@@ -43,6 +44,7 @@ public minDate = moment().subtract(7,'d').format();
 
           this.apiService.obtenerFechas(fechaC).subscribe(
             (res: any) => {
+              this.title = res.title;
               this.dates = res.dates;
               this.explanation = res.explanation;
               this.mimeType=res.media_type;
@@ -52,7 +54,7 @@ public minDate = moment().subtract(7,'d').format();
          );        
         }
       }, {
-        text: 'Log',
+        text: 'CANCELAR',
         handler: () => {
           console.log('Clicked Log. Do not Dismiss.');
         }
